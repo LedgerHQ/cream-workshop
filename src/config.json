@@ -1,0 +1,8 @@
+{
+    "network": {
+        "name": "Polygon Mumbai",
+        "currency": "MATIC",
+        "wsRPC": "wss://polygon-mumbai.g.alchemy.com/v2/aIJkcyjI1ZgkB8bMcKvfzgK2bO8ntabk"
+    },
+    "contractAddress": "0xb157fce0d116bb31c96480759db3c4d1e89cf48c"
+}
