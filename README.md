@@ -81,8 +81,17 @@ Ethers.js is a widely used library (like web3.js) abstracting in a confortable w
 - The **Connect4** contract on [Polygon Scan ](https://mumbai.polygonscan.com/address/0x20deb5dbdee348d3c53b63c8e7e2263502dd5618):
 **Polygonscan** is the polygon counterpart of the very famous **Etherscan**. It allow you to both see in real time all transactions emited on the network and inspect contract source codes, methods and events. Use it.
 
+- Matic Mumbai **Faucet** https://faucet.matic.network/
+Free dispenser of MATIC for endless testing. Be careful not to abuse it or you might end up in the gray list.
+
+- **Ledger** Connect4 Game Viewer: *add address*
+Watch everyone playing in real time with a specifically crafted DApp for the event.
+
+## What's next ?
+You made it till the end ? Congratz. You now understand the basics of **web3** development. All the code you've been playing with could actually run in the front-end. From a CLI to a webapp, the line is thin. From there, imagination is the limit, experiment creating a front-end for existing public contracts or try publishing your own by learning **solidity**. 
+
 ## License
 
 MIT
 
-**Free Software, Hell Yeah!**
+**Powered by Ledger**
