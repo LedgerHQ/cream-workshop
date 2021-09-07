@@ -67,12 +67,12 @@ The first goal of this workshop is to successfully retrieve data from the blockc
 ### II) Write
 The second goal of this workshop is to write on the blockchain by sending transactions. Try to implement `takeTurn`, `newGame`, `resignGame` and `claimWin`.
 
-If you brillantly completed those two steps, you should already be able to play a full game, choose your opponents carefully ! ;)
+If you brillantly completed those two steps, you should already be able to play fully play the game, choose your opponents carefully ! ;)
 
 ### III) Listen and react to events
 The final part of this workshop is to implement the `interactive` command. This command should allow you to play a whole game interactively, prompting you for your next move when it's your turn to play and showing your opponent's moves in real time.
 
-To achieve this you will have to subscribe to contract events. Those events could be found [here](https://mumbai.polygonscan.com/address/0x20deb5dbdee348d3c53b63c8e7e2263502dd5618#code#F1#L10)
+To achieve this you will have to subscribe to contract events. Those events definition can be found [here](https://mumbai.polygonscan.com/address/0x20deb5dbdee348d3c53b63c8e7e2263502dd5618#code#F1#L10)
 
 ## Resources
 - **Ethers JS V5** documentation: https://docs.ethers.io/
