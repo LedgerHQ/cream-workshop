@@ -15,6 +15,7 @@ import { wallet } from "./wallet";
 import { provider } from "./provider";
 import { formatEther } from "@ethersproject/units";
 import { interactive } from "./logic/interactive";
+import { getGameData } from "./logic/getGame";
 
 async function main() {
     console.log(`Public address is: [${wallet.address}]`);
@@ -38,7 +39,7 @@ async function main() {
                     description: "tergeted column"
                 });
         }, (argv) => {
-            takeTurn(argv.gameId, argv.x);
+            return takeTurn(argv.gameId, argv.x);
         })
 
         .command("showGameState", "display the current grid state of a game", (yargs) => {
@@ -68,6 +69,19 @@ async function main() {
                 });
         }, (argv) => {
             return newGame(argv.address);
+        })
+
+        .command("showGameData", "display game data for a given game", (yargs) => {
+            return yargs
+                .option("gameId", {
+                    alias: "id",
+                    type: "number",
+                    demandOption: true,
+                    description: "target game id"
+                });
+        }, async (argv) => {
+            const gameData = await getGameData(argv.gameId);
+            console.log(gameData);
         })
 
         .command("resignGame", "forfeit from an ongoing game", (yargs) => {
@@ -108,6 +122,7 @@ async function main() {
 
         .epilogue("Thanks for learning with us ! - By Ledger")
         .help()
+        .strictCommands()
         .argv;
 
     await argv;

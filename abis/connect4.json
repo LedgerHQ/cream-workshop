@@ -26,6 +26,18 @@
     "type": "function"
   },
   {
+    "constant": true,
+    "inputs": [],
+    "name": "getLeaderboard",
+    "outputs": [
+      { "name": "", "type": "address[]" },
+      { "name": "", "type": "uint256[]" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "constant": false,
     "inputs": [],
     "name": "renounceOwnership",
@@ -119,6 +131,18 @@
     "type": "function"
   },
   {
+    "constant": true,
+    "inputs": [{ "name": "", "type": "uint256" }],
+    "name": "players",
+    "outputs": [
+      { "name": "username", "type": "address" },
+      { "name": "amountWon", "type": "uint256" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -163,11 +187,36 @@
   {
     "anonymous": false,
     "inputs": [
+      { "indexed": false, "name": "category", "type": "string" },
+      { "indexed": false, "name": "message", "type": "string" }
+    ],
+    "name": "Log",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "player1", "type": "address" },
+      { "indexed": false, "name": "amountWon", "type": "uint256" },
+      { "indexed": false, "name": "totalAmount", "type": "uint256" }
+    ],
+    "name": "UpdatePlayerAmount",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
       { "indexed": true, "name": "player1", "type": "address" },
       { "indexed": true, "name": "player2", "type": "address" },
       { "indexed": false, "name": "gameId", "type": "uint256" }
     ],
     "name": "NewGame",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": true, "name": "player1", "type": "address" }],
+    "name": "NewPlayer",
     "type": "event"
   },
   {
