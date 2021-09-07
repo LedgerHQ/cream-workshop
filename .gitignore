@@ -118,3 +118,4 @@ dist
 .pnp.*
 
 src/contracts
+wallet.pvkey

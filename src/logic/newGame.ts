@@ -1,8 +1,6 @@
-import { getWallet } from "../wallet";
+import { wallet } from "../wallet";
+import { connect4Contract } from "../contract";
 
 export async function newGame(address: string): Promise<void> {
-    const wallet = await getWallet();
-
-    console.log(wallet.address);
     throw new Error("implement me :)");
 }
