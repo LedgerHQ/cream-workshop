@@ -41,7 +41,7 @@ git clone https://github.com/LedgerHQ/cream-workshop.git
 2. Install dependencies with `yarn` (or `npm`)
 3. Run the **CLI** a first time with no arguments to display your public address and Matic balance `yarn start` (or `npm run start`)
 4. You need to pay to write stuff on the blockchain. To get some funds, paste your public address on the form at https://faucet.matic.network/ (default settings) and you will receive some free testnet Matic.
-5. Go to ![this spreadsheet](https://docs.google.com/spreadsheets/d/18NGqoL77govjB49zh1a9r2ovtUfzcojkFjIuRK0XjO4/edit?usp=sharing) and add your username and address, this will allow other people to challenge you !
+5. Go to [this spreadsheet](https://docs.google.com/spreadsheets/d/18NGqoL77govjB49zh1a9r2ovtUfzcojkFjIuRK0XjO4/edit?usp=sharing) and add your username and address, this will allow other people to challenge you !
 
 ## The Goal
 
