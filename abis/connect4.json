@@ -1,161 +1,104 @@
 [
   {
-    "constant": true,
-    "inputs": [{ "name": "", "type": "uint256" }],
-    "name": "games",
-    "outputs": [
-      { "name": "player1", "type": "address" },
-      { "name": "player2", "type": "address" },
-      { "name": "isOver", "type": "bool" },
-      { "name": "isPlayer1Next", "type": "bool" },
-      { "name": "claimTime", "type": "uint32" },
-      { "name": "p1Amount", "type": "uint256" },
-      { "name": "p2Amount", "type": "uint256" }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [{ "name": "_gameId", "type": "uint256" }],
-    "name": "getBoard",
-    "outputs": [{ "name": "", "type": "uint8[6][7]" }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "getLeaderboard",
-    "outputs": [
-      { "name": "", "type": "address[]" },
-      { "name": "", "type": "uint256[]" }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "renounceOwnership",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
     "inputs": [
-      { "name": "_gameId", "type": "uint256" },
-      { "name": "_x", "type": "uint8" }
+      {
+        "internalType": "uint32",
+        "name": "_claimWindow",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_payAmount",
+        "type": "uint256"
+      }
     ],
-    "name": "takeTurn",
-    "outputs": [],
-    "payable": true,
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "getActiveGamesIds",
-    "outputs": [{ "name": "", "type": "uint256[]" }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "owner",
-    "outputs": [{ "name": "", "type": "address" }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "isOwner",
-    "outputs": [{ "name": "", "type": "bool" }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [{ "name": "_player2", "type": "address" }],
-    "name": "newGame",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "getGamesByPlayer",
-    "outputs": [{ "name": "", "type": "uint256[]" }],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [{ "name": "_gameId", "type": "uint256" }],
-    "name": "resignGame",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [{ "name": "_gameId", "type": "uint256" }],
-    "name": "claimWin",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [{ "name": "newOwner", "type": "address" }],
-    "name": "transferOwnership",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [{ "name": "", "type": "uint256" }],
-    "name": "players",
-    "outputs": [
-      { "name": "username", "type": "address" },
-      { "name": "amountWon", "type": "uint256" }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "payable": false,
     "stateMutability": "nonpayable",
     "type": "constructor"
   },
   {
     "anonymous": false,
     "inputs": [
-      { "indexed": true, "name": "gameId", "type": "uint256" },
-      { "indexed": false, "name": "player", "type": "address" },
-      { "indexed": false, "name": "isPlayer1Next", "type": "bool" },
-      { "indexed": false, "name": "x", "type": "uint8" },
-      { "indexed": false, "name": "y", "type": "uint8" }
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      }
+    ],
+    "name": "Draw",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player1",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player2",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      }
+    ],
+    "name": "NewGame",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      }
+    ],
+    "name": "NewPlayer",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "isPlayer1Next",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "x",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "y",
+        "type": "uint8"
+      }
     ],
     "name": "NextMove",
     "type": "event"
@@ -163,42 +106,62 @@
   {
     "anonymous": false,
     "inputs": [
-      { "indexed": true, "name": "gameId", "type": "uint256" },
-      { "indexed": false, "name": "winner", "type": "address" }
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
     ],
-    "name": "Victory",
+    "name": "OwnershipTransferred",
     "type": "event"
   },
   {
     "anonymous": false,
     "inputs": [
-      { "indexed": true, "name": "gameId", "type": "uint256" },
-      { "indexed": false, "name": "resigner", "type": "address" }
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "resigner",
+        "type": "address"
+      }
     ],
     "name": "Resigned",
     "type": "event"
   },
   {
     "anonymous": false,
-    "inputs": [{ "indexed": true, "name": "gameId", "type": "uint256" }],
-    "name": "Draw",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
     "inputs": [
-      { "indexed": false, "name": "category", "type": "string" },
-      { "indexed": false, "name": "message", "type": "string" }
-    ],
-    "name": "Log",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      { "indexed": true, "name": "player1", "type": "address" },
-      { "indexed": false, "name": "amountWon", "type": "uint256" },
-      { "indexed": false, "name": "totalAmount", "type": "uint256" }
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountWon",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "totalAmount",
+        "type": "uint256"
+      }
     ],
     "name": "UpdatePlayerAmount",
     "type": "event"
@@ -206,26 +169,265 @@
   {
     "anonymous": false,
     "inputs": [
-      { "indexed": true, "name": "player1", "type": "address" },
-      { "indexed": true, "name": "player2", "type": "address" },
-      { "indexed": false, "name": "gameId", "type": "uint256" }
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "winner",
+        "type": "address"
+      }
     ],
-    "name": "NewGame",
+    "name": "Victory",
     "type": "event"
   },
   {
-    "anonymous": false,
-    "inputs": [{ "indexed": true, "name": "player1", "type": "address" }],
-    "name": "NewPlayer",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
     "inputs": [
-      { "indexed": true, "name": "previousOwner", "type": "address" },
-      { "indexed": true, "name": "newOwner", "type": "address" }
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
     ],
-    "name": "OwnershipTransferred",
-    "type": "event"
+    "name": "activeGames",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_gameId",
+        "type": "uint256"
+      }
+    ],
+    "name": "claimWin",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "games",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "player1",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "player2",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "isOver",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "isPlayer1Next",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint32",
+        "name": "claimTime",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "p1Amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "p2Amount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getActiveGamesIds",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_gameId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getBoard",
+    "outputs": [
+      {
+        "internalType": "uint8[6][7]",
+        "name": "",
+        "type": "uint8[6][7]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getGamesByPlayer",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getLeaderboard",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_player2",
+        "type": "address"
+      }
+    ],
+    "name": "newGame",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "players",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "username",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amountWon",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_gameId",
+        "type": "uint256"
+      }
+    ],
+    "name": "resignGame",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_gameId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_x",
+        "type": "uint8"
+      }
+    ],
+    "name": "takeTurn",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   }
 ]
