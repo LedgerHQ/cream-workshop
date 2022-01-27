@@ -21,8 +21,8 @@ Please note that on the Polygon network, the first class citizen currency is not
 
 ## The Contract
 
-For this workshop's needs, our team deployed a smart contract here: `0xbcc93e0bafa48add1621b5f8a445d1e8ea7d93f9`
-You can use [Polygon Scan](https://mumbai.polygonscan.com/address/0xbcc93e0bafa48add1621b5f8a445d1e8ea7d93f9) to inspect contract code and experiment with all the defined read and write methods.
+For this workshop's needs, our team deployed a smart contract here: `0xd111d78e4022dbf9639788cacfe796760ad5db54`
+You can use [Polygon Scan](https://mumbai.polygonscan.com/address/0xd111d78e4022dbf9639788cacfe796760ad5db54) to inspect contract code and experiment with all the defined read and write methods.
 
 In general, contracts implement multiple types of methods:
 #### Read (views)
@@ -75,13 +75,13 @@ If you brillantly completed those two steps, you should already be able to play 
 ### III) Listen and react to events
 The final part of this workshop is to implement the `interactive` command. This command should allow you to play a whole game interactively, prompting you for your next move when it's your turn to play and showing your opponent's moves in real time.
 
-To achieve this you will have to subscribe to contract events. Those events definition can be found [here](https://mumbai.polygonscan.com/address/0xbcc93e0bafa48add1621b5f8a445d1e8ea7d93f9#code#F1#L10)
+To achieve this you will have to subscribe to contract events. Those events definition can be found [here](https://mumbai.polygonscan.com/address/0xd111d78e4022dbf9639788cacfe796760ad5db54#code#F1#L10)
 
 ## Resources
 - **Ethers JS V5** documentation: https://docs.ethers.io/
 Ethers.js is a widely used library (like web3.js) abstracting in a confortable way all the logic needed to build a modern web3 application. All the information you will need to complete the workshop should be in the doc.
 
-- The **Connect4** contract on [Polygon Scan ](https://mumbai.polygonscan.com/address/0xbcc93e0bafa48add1621b5f8a445d1e8ea7d93f9):
+- The **Connect4** contract on [Polygon Scan ](https://mumbai.polygonscan.com/address/0xd111d78e4022dbf9639788cacfe796760ad5db54):
 **Polygonscan** is the polygon counterpart of the very famous **Etherscan**. It allow you to both see in real time all transactions emited on the network and inspect contract source codes, methods and events. Use it.
 
 - Matic Mumbai **Faucet** https://faucet.matic.network/
